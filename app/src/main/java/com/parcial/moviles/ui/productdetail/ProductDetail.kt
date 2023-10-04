@@ -37,9 +37,9 @@ fun ProductDetail(id: Int) {
     if (product.value != null){
         Column{
             Spacer(modifier = Modifier.height(64.dp))
-            ProductImage(product.value!!.image.url)
+            ProductImage(product.value!!.image)
             Spacer(modifier = Modifier.height(8.dp))
-            ProductTitle(product.value!!.name.title)
+            ProductTitle(product.value!!.name)
         }
     }
 }

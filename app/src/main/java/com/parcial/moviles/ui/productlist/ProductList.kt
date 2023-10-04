@@ -76,9 +76,9 @@ fun ProductRow(
             }
     ){
         Row(verticalAlignment = Alignment.CenterVertically) {
-            ProductImage(product.image.url)
+            ProductImage(product.image)
             Column(modifier = Modifier.weight(5f)) {
-                Text(text = product.name.title, fontWeight = FontWeight.Bold)
+                Text(text = product.name, fontWeight = FontWeight.Bold)
             }
             IconButton(modifier = Modifier.weight(1f), onClick = {
                 if (isFavorite.value) {

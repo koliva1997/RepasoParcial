@@ -10,15 +10,15 @@ import retrofit2.http.Query
 interface ProductService {
 
 
-    @GET("search?query={text_query}&apiKey={api_token}")
+    @GET("search")
     fun searchByName(
-        @Path("api_token") apiToken: String = "1af337454f3043aa8b1b3eb118bc4457",
-        @Path("text_query") textQuery: String
+        @Query("apiKey") apiToken: String = "1af337454f3043aa8b1b3eb118bc4457",
+        @Query("query") textQuery: String
     ): Call <ProductResponse>
 
-    @GET("{id_product}?apiKey={api_token}")
+    @GET("{id_product}")
     fun searchById(
         @Path("id_product") idProduct: Int,
-        @Path("api_token") apiToken: String="1af337454f3043aa8b1b3eb118bc4457"
+        @Query("apiKey") apiToken: String="1af337454f3043aa8b1b3eb118bc4457"
     ): Call<Product>
 }
